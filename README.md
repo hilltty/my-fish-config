@@ -21,7 +21,6 @@ Manages [ZeroTier](https://github.com/zerotier/ZeroTierOne) service and network 
 ```fish
 zerotier on          # Start service
 zerotier off         # Stop service
-zerotier restart     # Restart service
 zerotier switch      # Toggle proxy mode
 zerotier status      # Show status
 ```
