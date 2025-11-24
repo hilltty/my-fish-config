@@ -5,7 +5,7 @@ function zerotier
         case on
             sudo systemctl is-active --quiet zerotier-one
             if test $status -eq 0
-                echo "ZeroTier already running."
+                echo "Error: ZeroTier already running."
                 return 1
             else
                 sudo systemctl start zerotier-one
@@ -16,7 +16,7 @@ function zerotier
         case off
             sudo systemctl is-active --quiet zerotier-one
             if test $status -ne 0
-                echo "ZeroTier already stopped."
+                echo "Error: ZeroTier already stopped."
                 return 1
             else
                 sudo systemctl stop zerotier-one
@@ -27,13 +27,13 @@ function zerotier
         case switch
             sudo systemctl is-active --quiet zerotier-one
             if test $status -ne 0
-                echo "ZeroTier is not running."
+                echo "Error: ZeroTier is not running."
                 return 2
             end
 
             set netjson (sudo zerotier-cli listnetworks -j 2>/dev/null | jq -r '.[] | select(.status=="OK")')
             if test -z "$netjson"
-                echo "No active ZeroTier network found."
+                echo "Error: No active ZeroTier network found."
                 return 2
             end
 
@@ -91,4 +91,3 @@ function zerotier
             return 1
     end
 end
-
