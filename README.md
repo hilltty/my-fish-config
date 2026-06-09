@@ -27,11 +27,24 @@ zerotier status      # Show status
 
 ### spicetify-apply
 
-Applies [Spicetify](https://spicetify.app/) customizations to Spotify ([Flathub](https://flathub.org/en/apps/com.spotify.Client) version).
-
+Applies [Spicetify](https://spicetify.app/) customizations to Spotify.
+ 
 **Commands:**
 ```fish
-spicetify-apply      # Set permissions, update, restore, and apply
+spicetify-apply       # Apply Spicetify
+spicetify-apply -v    # Verbose mode
+```
+ 
+**Configuration:**
+ 
+`spotify_path` at the top of the function defaults to the system-level Flatpak path:
+```
+/var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
+```
+ 
+For user-level Flatpak installations, change it to:
+```
+~/.local/share/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
 ```
 
 ## License
