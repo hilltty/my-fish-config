@@ -1,11 +1,11 @@
 function spicetify-apply
-    sudo chmod a+wr /usr/lib64/spotify-client
+    sudo chmod a+wr /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
     or begin
         echo "Error: chmod spotify-client failed."
         return 1
     end
 
-    sudo chmod a+wr /usr/lib64/spotify-client/Apps -R
+    sudo chmod a+wr -R /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/Apps
     or begin
         echo "Error: chmod Apps directory failed."
         return 1

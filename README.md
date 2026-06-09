@@ -27,7 +27,7 @@ zerotier status      # Show status
 
 ### spicetify-apply
 
-Applies [Spicetify](https://spicetify.app/) customizations to Spotify ([negativo17](https://negativo17.org/spotify-client/) version).
+Applies [Spicetify](https://spicetify.app/) customizations to Spotify ([Flathub](https://flathub.org/en/apps/com.spotify.Client) version).
 
 **Commands:**
 ```fish
